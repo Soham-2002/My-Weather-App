@@ -1,29 +1,28 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': 'b45e96323fmshf5e4bc50d3b8a90p1e091djsnfb21cde4eb87',
-    'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+    'x-rapidapi-key': '168af9e5damsh1240198abc1cf88p1afe14jsn3c67a17d0eed',
+		'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
   }
 };
 const getWeather = (city) => {
   cityName.innerHTML = city
-  fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+  fetch('https://open-weather13.p.rapidapi.com/city/'+ city +'/EN' , options)
     .then(response => response.json())
     .then(response => {
       console.log(response)
-      temp.innerHTML = response.temp
-      temp2.innerHTML = response.temp
-      temp3.innerHTML = response.temp
-      feels_like.innerHTML = response.feels_like
-      humidity.innerHTML = response.humidity
-      humidity2.innerHTML = response.humidity
-      min_temp.innerHTML = response.min_temp
-      max_temp.innerHTML = response.max_temp
-      wind_speed.innerHTML = response.wind_speed
-      wind_speed2.innerHTML = response.wind_speed
-      wind_degrees.innerHTML = response.wind_degrees
-      sunrise.innerHTML = response.sunrise
-      sunset.innerHTML = response.sunset
+      temp.innerHTML = response.main.temp
+      temp2.innerHTML = response.main.temp
+      feels_like.innerHTML = response.main.feels_like
+      humidity.innerHTML = response.main.humidity
+      humidity2.innerHTML = response.main.humidity
+      min_temp.innerHTML = response.main.temp_min
+      max_temp.innerHTML = response.main.temp_max
+      wind_speed.innerHTML = response.wind.speed
+      wind_speed2.innerHTML = response.wind.speed
+      wind_degrees.innerHTML = response.wind.deg
+      sunrise.innerHTML = response.sys.sunrise
+      sunset.innerHTML = response.sys.sunset
     })
     .catch(err => console.error(err));
 }
@@ -35,70 +34,70 @@ submit.addEventListener("click", (e) => {
 
 getWeather("Delhi")
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=kolkata', options)
+fetch('https://open-weather13.p.rapidapi.com/city/kolkata/EN', options)
   .then(response => response.json())
   .then(response => {
     console.log(response)
-    cloud_pct3.innerHTML = response.cloud_pct
-    temp3.innerHTML = response.temp
-    feels_like3.innerHTML = response.feels_like
-    humidity3.innerHTML = response.humidity
-    min_temp3.innerHTML = response.min_temp
-    max_temp3.innerHTML = response.max_temp
-    wind_speed3.innerHTML = response.wind_speed
-    wind_degrees3.innerHTML = response.wind_degrees
-    sunrise3.innerHTML = response.sunrise
-    sunset3.innerHTML = response.sunset
+    cloud_pct3.innerHTML = response.clouds.all
+    temp3.innerHTML = response.main.temp
+    feels_like3.innerHTML = response.main.feels_like
+    humidity3.innerHTML = response.main.humidity
+    min_temp3.innerHTML = response.main.temp_min
+    max_temp3.innerHTML = response.main.temp_max
+    wind_speed3.innerHTML = response.wind.speed
+    wind_degrees3.innerHTML = response.wind.deg
+    sunrise3.innerHTML = response.sys.sunrise
+    sunset3.innerHTML = response.sys.sunset
   })
   .catch(err => console.error(err));
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=delhi', options)
+fetch('https://open-weather13.p.rapidapi.com/city/delhi/EN', options)
   .then(response => response.json())
   .then(response => {
     console.log(response)
-    cloud_pct4.innerHTML = response.cloud_pct
-    temp4.innerHTML = response.temp
-    feels_like4.innerHTML = response.feels_like
-    humidity4.innerHTML = response.humidity
-    min_temp4.innerHTML = response.min_temp
-    max_temp4.innerHTML = response.max_temp
-    wind_speed4.innerHTML = response.wind_speed
-    wind_degrees4.innerHTML = response.wind_degrees
-    sunrise4.innerHTML = response.sunrise
-    sunset4.innerHTML = response.sunset
+    cloud_pct4.innerHTML = response.clouds.all
+    temp4.innerHTML = response.main.temp
+    feels_like4.innerHTML = response.main.feels_like
+    humidity4.innerHTML = response.main.humidity
+    min_temp4.innerHTML = response.main.temp_min
+    max_temp4.innerHTML = response.main.temp_max
+    wind_speed4.innerHTML = response.wind.speed
+    wind_degrees4.innerHTML = response.wind.deg
+    sunrise4.innerHTML = response.sys.sunrise
+    sunset4.innerHTML = response.sys.sunset
   })
   .catch(err => console.error(err));
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=mumbai', options)
+fetch('https://open-weather13.p.rapidapi.com/city/mumbai/EN', options)
   .then(response => response.json())
   .then(response => {
     console.log(response)
-    cloud_pct5.innerHTML = response.cloud_pct
-    temp5.innerHTML = response.temp
-    feels_like5.innerHTML = response.feels_like
-    humidity5.innerHTML = response.humidity
-    min_temp5.innerHTML = response.min_temp
-    max_temp5.innerHTML = response.max_temp
-    wind_speed5.innerHTML = response.wind_speed
-    wind_degrees5.innerHTML = response.wind_degrees
-    sunrise5.innerHTML = response.sunrise
-    sunset5.innerHTML = response.sunset
+    cloud_pct5.innerHTML = response.clouds.all
+    temp5.innerHTML = response.main.temp
+    feels_like5.innerHTML = response.main.feels_like
+    humidity5.innerHTML = response.main.humidity
+    min_temp5.innerHTML = response.main.temp_min
+    max_temp5.innerHTML = response.main.temp_max
+    wind_speed5.innerHTML = response.wind.speed
+    wind_degrees5.innerHTML = response.wind.deg
+    sunrise5.innerHTML = response.sys.sunrise
+    sunset5.innerHTML = response.sys.sunset
   })
   .catch(err => console.error(err));
 
-fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=chennai', options)
+fetch('https://open-weather13.p.rapidapi.com/city/chennai/EN', options)
   .then(response => response.json())
   .then(response => {
     console.log(response)
-    cloud_pct6.innerHTML = response.cloud_pct
-    temp6.innerHTML = response.temp
-    feels_like6.innerHTML = response.feels_like
-    humidity6.innerHTML = response.humidity
-    min_temp6.innerHTML = response.min_temp
-    max_temp6.innerHTML = response.max_temp
-    wind_speed6.innerHTML = response.wind_speed
-    wind_degrees6.innerHTML = response.wind_degrees
-    sunrise6.innerHTML = response.sunrise
-    sunset6.innerHTML = response.sunset
+    cloud_pct6.innerHTML = response.clouds.all
+    temp6.innerHTML = response.main.temp
+    feels_like6.innerHTML = response.main.feels_like
+    humidity6.innerHTML = response.main.humidity
+    min_temp6.innerHTML = response.main.temp_min
+    max_temp6.innerHTML = response.main.temp_max
+    wind_speed6.innerHTML = response.wind.speed
+    wind_degrees6.innerHTML = response.wind.deg
+    sunrise6.innerHTML = response.sys.sunrise
+    sunset6.innerHTML = response.sys.sunset
   })
   .catch(err => console.error(err));
